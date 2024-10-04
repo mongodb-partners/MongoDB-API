@@ -2,7 +2,6 @@ import os
 import json
 from pymongo import MongoClient
 from bson import ObjectId
-from pprint import pprint
 import traceback
 
 # Environment variables
@@ -12,9 +11,11 @@ ATLAS_CONNECTION_STRING = os.environ['ATLAS_CONNECTION_STRING']
 def connect_to_mongodb():
     try:
         client = MongoClient(ATLAS_CONNECTION_STRING)
+        return client
     except Exception as e: 
         print(e)
-    return client
+        return error_response("Not able to connect with Atlas Cluster")
+
 
 def success_response(body):
     return {

@@ -25,30 +25,102 @@ Resources:
   MyLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: .
+      CodeUri: ./lambda_function/
       Handler: app.lambda_handler
-      Runtime: python3.10
+      Runtime: python3.9
+      Timeout: 30
       Environment:
         Variables:
           ATLAS_CONNECTION_STRING: !Ref AtlasConnectionString
           AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
       Role: !GetAtt LambdaExecutionRole.Arn
       Events:
-        GetEvent:
+        findOneEvent:
           Type: HttpApi
           Properties:
-            Path: /
-            Method: ANY
+            Path: /findOne
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+        
+        findEvent:
+          Type: HttpApi
+          Properties:
+            Path: /find
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+        
+        insertOneEvent:
+          Type: HttpApi
+          Properties:
+            Path: /insertOne
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+
+        insertManyEvent:
+          Type: HttpApi
+          Properties:
+            Path: /insertMany
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+
+        deleteOneEvent:
+          Type: HttpApi
+          Properties:
+            Path: /deleteOne
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+
+        deleteManyEvent:
+          Type: HttpApi
+          Properties:
+            Path: /deleteMany
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+
+        updateOneEvent:
+          Type: HttpApi
+          Properties:
+            Path: /updateOne
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+        
+        updateManyEvent:
+          Type: HttpApi
+          Properties:
+            Path: /updateMany
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
+        
+        aggregateEvent:
+          Type: HttpApi
+          Properties:
+            Path: /aggregate
+            Method: POST
+            ApiId: !Ref MyHttpApi
+            Auth:
+              Authorizer: AWS_IAM
 
   MyHttpApi:
     Type: AWS::Serverless::HttpApi
     Properties:
-      CorsConfiguration:
-        AllowOrigins: "*"
-        AllowHeaders: "*"
-        AllowMethods: "*"
       Auth:
-        EnableIamAuthorizer: IAM
+        EnableIamAuthorizer: true
 
   LambdaExecutionRole:
     Type: AWS::IAM::Role

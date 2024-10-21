@@ -1,2 +1,5 @@
 venv/
 .idea/
+.vs_code/
+.aws_sam/
+packaged.yaml

@@ -1,0 +1,84 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: MongoDB-DataAPI-Alternative
+    Description: >
+      This project helps you query your MongoDB Atlas cluster in the same way as Data API
+    Author: "Anuj Panchal"
+    SpdxLicenseId: Apache-2.0
+    LicenseUrl: LICENSE.txt
+    ReadmeUrl: README.md
+    Labels: ['MongoDB', 'DataAPI']
+    HomePageUrl: https://github.com/mongodb-partners/MongoDB-DataAPI-Alternative
+    SemanticVersion: 1.0.0
+    SourceCodeUrl: https://github.com/mongodb-partners/MongoDB-DataAPI-Alternative
+
+Parameters:
+  AtlasConnectionString:
+    Type: String
+    Description: "MongoDB Atlas connection string to be passed during deployment"
+    NoEcho: true
+
+Resources:
+  MyLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Environment:
+        Variables:
+          ATLAS_CONNECTION_STRING: !Ref AtlasConnectionString
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1"
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Events:
+        GetEvent:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: ANY
+
+  MyHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins: "*"
+        AllowHeaders: "*"
+        AllowMethods: "*"
+      Auth:
+        EnableIamAuthorizer: IAM
+
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties: 
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: LambdaExecutionPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: "*"
+              - Effect: Allow
+                Action: 
+                  - secretsmanager:GetSecretValue
+                Resource: "*"
+
+Outputs:
+  ApiUrl:
+    Description: "URL of the API Gateway"
+    Value: !Sub "https://${MyHttpApi}.execute-api.${AWS::Region}.amazonaws.com/"
+    Export:
+      Name: ApiUrl

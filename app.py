@@ -3,6 +3,7 @@ import json
 from pymongo import MongoClient
 from bson import ObjectId
 import traceback
+from datetime import datetime
 
 # Environment variables
 ATLAS_CONNECTION_STRING = os.environ['ATLAS_CONNECTION_STRING']
@@ -20,7 +21,7 @@ def connect_to_mongodb():
 def success_response(body):
     return {
         "statusCode": 200,
-        "body": json.dumps(body),
+        "body": json.dumps(body, cls=DateTimeEncoder),
         "headers": {
             "Content-Type": "application/json"
         }
@@ -35,6 +36,13 @@ def error_response(err):
             'Content-Type': 'application/json',
         },
     }
+
+# Used to convert datetime object(s) to string
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, datetime):
+            return o.isoformat()
+        return super().default(o)
 
 def lambda_handler(event, context):
     client = None

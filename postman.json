@@ -1356,12 +1356,12 @@
 	"variable": [
 		{
 			"key": "ACCESS_KEY_ID",
-			"value": "ASIA6IESFAOZTLAGJUV5",
+			"value": "YOUR ACCESS KEY ID",
 			"type": "string"
 		},
 		{
 			"key": "SECRET_ACCESS_KEY",
-			"value": "XgU8f71AP0k+hFj2HGimMt/woxJxPFk+v6fF+dEN",
+			"value": "YOUR SECRET ACCESS KEY",
 			"type": "string"
 		},
 		{
@@ -1371,12 +1371,12 @@
 		},
 		{
 			"key": "SESSION_TOKEN",
-			"value": "IQoJb3JpZ2luX2VjENz//////////wEaCXVzLWVhc3QtMSJHMEUCIDFSJu4XwVWZM9Z2F/tus0b6dEaST1OcLQoR+S+X3qawAiEA8HIaIENmu5lrYRq5LliEB/SpBo0wLMhBbk/uWHG4/TkqtwMIJRAEGgw5Nzk1NTkwNTYzMDciDKEJmZZJmy67wYd2YCqUA3XJAYwnjLGs2YD9OoPLX9sjjSYe21hGCJVpefIF6khKUdB3Y1VDWKSRs3Tkvja0LEhvX+A41uJHBPDbrd/GCY8NvvDpr0zDDc5YMKlEOenjBdhcYZyVlEZERsib4EQnq5HAOnWA0ix7ER26u7R67RRLfpqhm7D6JWb5PGhm2r1hPUPQlyhuu8WHnAT0b6KVOxU6zq62TOlVyuLPX7sHswIf39Orb52o+IfSVmvua4/9vuT9F9fnWlCGwU1NeNXiEVwoSMeKUvfx7Mmt4uYBu/pmF6tDreF8zncCA2+VILeM2OPaERsf3sdAAUg3/fsQQlN89JJmUPKZi2dCg8XbRaVuE4fTTtIkZdYFPJw63kgUy/R5yyDMuqlfotogMuYGDH1ZuE4b2JWfs+sTJommvMpC6tLo6r7kfi7L8LJPh5jhpP8xUb+eq43pYI3++6TWwWylR98X2w/EvyYG5bda8GefMXTFxDZTquccaQt/nC8Y6XnU8pPqnHvS5etcdzfrghai4wTP3opBh3ZopQmLtuT9wHLnMPfZ2LcGOqYBgMaEiTRJY9P0FVI7NejqjbXP3vunbrJlYYST0MFkTS5UwrNjdVBkJ/1pgV7wUorvj+Yky0GUCralREEvMdt4ns4C0rYxs27aJMAPv5nZ18Gawu1SV9+9xDr3rBXtOOZGeCE098VJwFjHP8rPNc//TBo0y+ICanGsZsKkPwwQ6T5ef4F4d5QImzf34k8VOSLq6SHG5XnIhRJMNXL7IDaedKxLoo0sLA==",
+			"value": "YOUR SESSION TOKEN (IF APPLICABLE)",
 			"type": "string"
 		},
 		{
 			"key": "function_url",
-			"value": "https://2uolg56ra472f572a2azxxfo640umiqv.lambda-url.us-east-1.on.aws",
+			"value": "YOUR LAMBDA FUNCTION OR API GATEWAY URL",
 			"type": "string"
 		}
 	]

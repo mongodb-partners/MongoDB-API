@@ -1,0 +1,1383 @@
+{
+	"info": {
+		"_postman_id": "53148426-c9e2-4d91-a1f5-e6e5e997dc44",
+		"name": "Data API Replacement",
+		"description": "This collection of API examples is designed to assist you in interacting with the API using the same formats you previously used with the Data API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37904138"
+	},
+	"item": [
+		{
+			"name": "findOne",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {},\n  \"projection\": {}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/findOne",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"findOne"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {},\n  \"projection\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://2uolg56ra472f572a2azxxfo640umiqv.lambda-url.us-east-1.on.aws/findOne",
+							"protocol": "https",
+							"host": [
+								"2uolg56ra472f572a2azxxfo640umiqv",
+								"lambda-url",
+								"us-east-1",
+								"on",
+								"aws"
+							],
+							"path": [
+								"findOne"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 07:22:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "742bfd02-65fe-4bef-9c84-f7b052f2d9ec"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f65d41-5713a8405fbf2c4f4e1c97dd;Parent=03e0159609e39d27;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"document\": {\n        \"name\": \"John Doe\",\n        \"_id\": \"66f4186327007a7158874853\",\n        \"age\": 45,\n        \"likes\": [\n            \"Donuts\",\n            \"Avengers\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "null",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\"name\": \"Like\"},\n  \"projection\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/findOne",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"findOne"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Oct 2024 06:03:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fHHAFgkEIAMEPRQ="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"document\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "find",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"sample_mflix\",\n  \"collection\": \"movies\",\n  \"filter\": {\n  },\n  \"projection\": {\n    \"title\": 1, \n    \"directors\": 1,\n    \"released\": 1\n  },\n  \"sort\": {\n    \"title\": -1\n  },\n  \"skip\": 0,\n  \"limit\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/find",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"find"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"sample_mflix\",\n  \"collection\": \"movies\",\n  \"filter\": {\n  },\n  \"projection\": {\n    \"title\": 1, \n    \"directors\": 1\n  },\n  \"sort\": {\n    \"title\": -1\n  },\n  \"skip\": 0,\n  \"limit\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://2uolg56ra472f572a2azxxfo640umiqv.lambda-url.us-east-1.on.aws/find",
+							"protocol": "https",
+							"host": [
+								"2uolg56ra472f572a2azxxfo640umiqv",
+								"lambda-url",
+								"us-east-1",
+								"on",
+								"aws"
+							],
+							"path": [
+								"find"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 07:23:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "506"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "705b527f-2dac-45b1-b3a7-918bbdb903b3"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f65d5d-00f4844600a8faa461a3fa8c;Parent=6f699775f9736f1d;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"documents\": [\n        {\n            \"directors\": [\n                \"Mariano Barroso\"\n            ],\n            \"_id\": \"573a139af29313caabcf05c0\",\n            \"title\": \"èxtasis\"\n        },\n        {\n            \"directors\": [\n                \"Seth Kramer\",\n                \"Daniel A. Miller\",\n                \"Jeremy Newberger\"\n            ],\n            \"_id\": \"573a13d1f29313caabd90005\",\n            \"title\": \"èvocateur: The Morton Downey Jr. Movie\"\n        },\n        {\n            \"directors\": [\n                \"Lèrio Ferreira\"\n            ],\n            \"_id\": \"573a13b2f29313caabd39c6b\",\n            \"title\": \"èrido Movie\"\n        },\n        {\n            \"directors\": [\n                \"Karyn Kusama\"\n            ],\n            \"_id\": \"573a13b0f29313caabd32ca8\",\n            \"title\": \"èon Flux\"\n        },\n        {\n            \"directors\": [\n                \"Jean Becker\"\n            ],\n            \"_id\": \"573a139af29313caabcef1cc\",\n            \"title\": \"èlisa\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "empty",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"sample_mflix\",\n  \"collection\": \"movies\",\n  \"filter\": {\n    \"title\": \"anuj\"\n  },\n  \"projection\": {\n    \"title\": 1, \n    \"directors\": 1\n  },\n  \"sort\": {\n    \"title\": -1\n  },\n  \"skip\": 0,\n  \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/find",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"find"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Oct 2024 06:19:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "fHJYui_MoAMEJTA="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"documents\": []\n}"
+				},
+				{
+					"name": "Datetime response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"sample_mflix\",\n  \"collection\": \"movies\",\n  \"filter\": {\n  },\n  \"projection\": {\n    \"title\": 1, \n    \"directors\": 1,\n    \"released\": 1\n  },\n  \"sort\": {\n    \"title\": -1\n  },\n  \"skip\": 0,\n  \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/find",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"find"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Oct 2024 06:20:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1433"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Apigw-Requestid",
+							"value": "f_Ld-gfRoAMEJog="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"documents\": [\n        {\n            \"_id\": \"573a139af29313caabcf05c0\",\n            \"title\": \"èxtasis\",\n            \"released\": \"1996-02-16T00:00:00\",\n            \"directors\": [\n                \"Mariano Barroso\"\n            ]\n        },\n        {\n            \"_id\": \"573a13d1f29313caabd90005\",\n            \"title\": \"èvocateur: The Morton Downey Jr. Movie\",\n            \"released\": \"2013-06-07T00:00:00\",\n            \"directors\": [\n                \"Seth Kramer\",\n                \"Daniel A. Miller\",\n                \"Jeremy Newberger\"\n            ]\n        },\n        {\n            \"_id\": \"573a13b2f29313caabd39c6b\",\n            \"title\": \"èrido Movie\",\n            \"released\": \"2006-04-14T00:00:00\",\n            \"directors\": [\n                \"Lèrio Ferreira\"\n            ]\n        },\n        {\n            \"_id\": \"573a13b0f29313caabd32ca8\",\n            \"title\": \"èon Flux\",\n            \"released\": \"2005-12-02T00:00:00\",\n            \"directors\": [\n                \"Karyn Kusama\"\n            ]\n        },\n        {\n            \"_id\": \"573a139af29313caabcef1cc\",\n            \"title\": \"èlisa\",\n            \"released\": \"1995-02-01T00:00:00\",\n            \"directors\": [\n                \"Jean Becker\"\n            ]\n        },\n        {\n            \"_id\": \"573a13eef29313caabdd4d72\",\n            \"title\": \"èkte vare\",\n            \"released\": \"2014-05-08T00:00:00\",\n            \"directors\": [\n                \"Fenar Ahmad\"\n            ]\n        },\n        {\n            \"_id\": \"573a1398f29313caabce9572\",\n            \"title\": \"èke och hans vèrld\",\n            \"released\": \"1984-10-26T00:00:00\",\n            \"directors\": [\n                \"Allan Edwall\"\n            ]\n        },\n        {\n            \"_id\": \"573a1398f29313caabceabb9\",\n            \"title\": \"èdipussi\",\n            \"released\": \"1988-03-10T00:00:00\",\n            \"directors\": [\n                \"Vicco von Bèlow\"\n            ]\n        },\n        {\n            \"_id\": \"573a13d1f29313caabd8f33f\",\n            \"title\": \"èber uns das All\",\n            \"released\": \"2011-09-15T00:00:00\",\n            \"directors\": [\n                \"Jan Schomburg\"\n            ]\n        },\n        {\n            \"_id\": \"573a13d0f29313caabd8b2f5\",\n            \"title\": \"èVivan las Antipodas!\",\n            \"released\": \"2012-02-23T00:00:00\",\n            \"directors\": [\n                \"Victor Kossakovsky\"\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "insertOne",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"document\": {\n    \"name\": \"Bruno Fernandes\",\n    \"age\": 32,\n    \"likes\": [\"CAM\", \"attack\"]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/insertOne",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"insertOne"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"document\": {\n    \"name\": \"Bruno Fernandes\",\n    \"age\": 32,\n    \"likes\": [\"CAM\", \"attack\"]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://2uolg56ra472f572a2azxxfo640umiqv.lambda-url.us-east-1.on.aws/insertOne",
+							"protocol": "https",
+							"host": [
+								"2uolg56ra472f572a2azxxfo640umiqv",
+								"lambda-url",
+								"us-east-1",
+								"on",
+								"aws"
+							],
+							"path": [
+								"insertOne"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 06:46:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "7e326acf-e912-4e3c-aafe-446a45a82dc3"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f654b6-2bc551d359be13df1fc3fc24;Parent=62b75014d3941acd;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"insertedId\": \"66f654bb50943e5a85d44e18\"\n}"
+				}
+			]
+		},
+		{
+			"name": "insertMany",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"documents\": [{\n    \"name\": \"Rasmus Hojlund\",\n    \"age\": 24,\n    \"likes\": [\"ST\", \"attack\"]\n  }, {\n    \"name\": \"Joshua Zirkzee\",\n    \"age\": 23,\n    \"likes\": [\"ST\", \"attack\"]\n  }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/insertMany",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"insertMany"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"documents\": [{\n    \"name\": \"Rasmus Hojlund\",\n    \"age\": 24,\n    \"likes\": [\"ST\", \"attack\"]\n  }, {\n    \"name\": \"Joshua Zirkzee\",\n    \"age\": 23,\n    \"likes\": [\"ST\", \"attack\"]\n  }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://2uolg56ra472f572a2azxxfo640umiqv.lambda-url.us-east-1.on.aws/insertMany",
+							"protocol": "https",
+							"host": [
+								"2uolg56ra472f572a2azxxfo640umiqv",
+								"lambda-url",
+								"us-east-1",
+								"on",
+								"aws"
+							],
+							"path": [
+								"insertMany"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 06:52:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "43a4414d-720a-46d5-a42b-5a0bf7d6b801"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f65619-4f22fa862ca98d0e42724060;Parent=280957859d58cce2;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"insertedIds\": [\n        \"66f6561d3c8216cd5c8274d9\",\n        \"66f6561d3c8216cd5c8274da\"\n    ]\n}"
+				},
+				{
+					"name": "Success - custom _id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"documents\": [{\n    \"_id\": \"rasmus_hojlund\",\n    \"name\": \"Rasmus Hojlund\",\n    \"age\": 24,\n    \"likes\": [\"ST\", \"attack\"]\n  }, {\n    \"name\": \"Joshua Zirkzee\",\n    \"age\": 23,\n    \"likes\": [\"ST\", \"attack\"]\n  }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/insertMany",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"insertMany"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 08:21:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "a8b571f2-56b2-435c-a55d-b14df23cc731"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f66af8-7e113263707c410822e6c318;Parent=5a602a34399b1e4f;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"insertedIds\": [\n        \"rasmus_hojlund\",\n        \"66f66af854bfc6260b92b300\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteOne",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"_id\": \"67161882461f0976b8fb3a36\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/deleteOne",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"deleteOne"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"_id\": \"66f52ee4db7b3cc877b0d356\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/deleteOne",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"deleteOne"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 07:50:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "7d8ede36-c4b9-40e7-88da-789436b6092d"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f663b4-333ddb01587704802f810258;Parent=09033fba165f03ef;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"deletedCount\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteMany",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"name\": {\"$regex\": \"Hojlund\"}\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/deleteMany",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"deleteMany"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"likes\": \"ST\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/deleteMany",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"deleteMany"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 07:57:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f85db59a-c8f3-45bc-a746-e298069a52e8"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f6656b-1e0413170242dcba41f85f28;Parent=169059181d9ff909;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"deletedCount\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "aggregate",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataSource\": \"mongodb-atlas\",\n    \"database\": \"sample_mflix\",\n    \"collection\": \"movies\",\n    \"pipeline\": [\n        {\n            \"$match\": {\n                \"runtime\": {\n                    \"$gte\": 50\n                },\n                \"year\": {\n                    \"$lte\": 2000\n                }\n            }\n        },\n        {\n            \"$project\": {\n                \"title\": 1,\n                \"plot\": 1,\n                \"fullplot\": 1,\n                \"languages\": 1,\n                \"cast\": 1,\n                \"directors\": 1,\n                \"year\": 1\n            }\n        },\n        {\n            \"$group\": {\n                \"_id\": \"$year\",\n                \"no_of_movies\": {\n                    \"$sum\": 1\n                }\n            }\n        },\n        {\n            \"$sort\": {\n                \"no_of_movies\": -1\n            }\n        },\n        {\n            \"$limit\": 10\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/aggregate",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"aggregate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"sample_mflix\",\n  \"collection\": \"movies\",\n  \"pipeline\": [\n    {\n        \"$match\": {\n            \"runtime\": {\"$gte\": 50},\n            \"year\": {\"$lte\": 2000}\n        }\n    },\n    {\n        \"$project\": {\n            \"title\": 1,\n            \"plot\": 1, \n            \"fullplot\": 1,\n            \"languages\": 1,\n            \"cast\": 1,\n            \"directors\": 1\n        }\n    },\n    {\n        \"$limit\": 10\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/aggregate",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"aggregate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 08:12:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6977"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "83ae45ff-edc1-4ab1-bd75-4d7ccfcf75a4"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f66900-6f11780a3aaccb5e08628456;Parent=6c511ce2f721eecb;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"documents\": [\n        {\n            \"cast\": [\n                \"Jane Gail\",\n                \"Ethel Grandin\",\n                \"William H. Turner\",\n                \"Matt Moore\"\n            ],\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"A woman, with the aid of her police officer sweetheart, endeavors to uncover the prostitution ring that has kidnapped her sister, and the philanthropist who secretly runs it.\",\n            \"directors\": [\n                \"George Loane Tucker\"\n            ],\n            \"_id\": \"573a1390f29313caabcd4eaf\",\n            \"title\": \"Traffic in Souls\"\n        },\n        {\n            \"cast\": [\n                \"Stanley Hunt\",\n                \"Sarah Constance Smith Hunt\",\n                \"Mrs. George Walkus\",\n                \"Paddy 'Malid\"\n            ],\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"Original advertising for the film describes it as a drama of primitive life on the shores of the North Pacific...\",\n            \"directors\": [\n                \"Edward S. Curtis\"\n            ],\n            \"_id\": \"573a1390f29313caabcd516c\",\n            \"title\": \"In the Land of the Head Hunters\"\n        },\n        {\n            \"cast\": [\n                \"Pearl White\",\n                \"Crane Wilbur\",\n                \"Paul Panzer\",\n                \"Edward Josè\"\n            ],\n            \"fullplot\": \"Young Pauline is left a lot of money when her wealthy uncle dies. However, her uncle's secretary has been named as her guardian until she marries, at which time she will officially take possession of her inheritance. Meanwhile, her \\\"guardian\\\" and his confederates constantly come up with schemes to get rid of Pauline so that he can get his hands on the money himself.\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"Young Pauline is left a lot of money when her wealthy uncle dies. However, her uncle's secretary has been named as her guardian until she marries, at which time she will officially take ...\",\n            \"directors\": [\n                \"Louis J. Gasnier\",\n                \"Donald MacKenzie\"\n            ],\n            \"_id\": \"573a1390f29313caabcd5293\",\n            \"title\": \"The Perils of Pauline\"\n        },\n        {\n            \"cast\": [\n                \"George Beban\",\n                \"Clara Williams\",\n                \"J. Frank Burke\",\n                \"Leo Willis\"\n            ],\n            \"fullplot\": \"An immigrant leaves his sweetheart in Italy to find a better life across the sea in the grimy slums of New York. They are eventually reunited and marry. But life in New York is hard and tragedy tarnishes their dream of a better life in the new world.\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"An immigrant leaves his sweetheart in Italy to find a better life across the sea in the grimy slums of New York. They are eventually reunited and marry. But life in New York is hard and ...\",\n            \"directors\": [\n                \"Reginald Barker\"\n            ],\n            \"_id\": \"573a1390f29313caabcd56df\",\n            \"title\": \"The Italian\"\n        },\n        {\n            \"cast\": [\n                \"John McCann\",\n                \"James A. Marcus\",\n                \"Maggie Weston\",\n                \"Harry McCoy\"\n            ],\n            \"fullplot\": \"At 10 years old, Owens becomes a ragged orphan when his sainted mother dies. The Conways, who are next door neighbors, take Owen in, but the constant drinking by Jim soon puts Owen on the street. By 17, Owen learns that might is right. By 25, Owen is the leader of his own gang who spend most of their time gambling and drinking. But Marie comes into the gangster area of town and everything changes for Owen as he falls for Marie. But he cannot tell her so, so he comes to her settlement to find education and inspiration. But soon, his old way of life will rise to confront him again.\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"At 10 years old, Owens becomes a ragged orphan when his sainted mother dies. The Conways, who are next door neighbors, take Owen in, but the constant drinking by Jim soon puts Owen on the ...\",\n            \"directors\": [\n                \"Raoul Walsh\"\n            ],\n            \"_id\": \"573a1390f29313caabcd587d\",\n            \"title\": \"Regeneration\"\n        },\n        {\n            \"cast\": [\n                \"Howard C. Hickman\",\n                \"Enid Markey\",\n                \"Lola May\",\n                \"Kate Bruce\"\n            ],\n            \"fullplot\": \"Allegorical film about peace. A king starts a war, many of the women are against it, people are pressed into service. A count has constructed a submarine and gets the order to sink an ocean liner, that is also carrying - supposedly - ammunition for the enemy. The count refuses to fire the torpedos, and sinks the submarine. He survives, but in a limbo between death and life where he meets Jesus, who takes him over to preach peace. Naturally the king arrests him and sentences him to death for treason, but then Jesus shows him the real face of war.\",\n            \"plot\": \"Christ takes on the form of a pacifist count to end a senseless war.\",\n            \"directors\": [\n                \"Reginald Barker\",\n                \"Thomas H. Ince\",\n                \"Raymond B. West\",\n                \"Walter Edwards\",\n                \"David Hartford\",\n                \"Jay Hunt\",\n                \"J. Parker Read Jr.\"\n            ],\n            \"_id\": \"573a1390f29313caabcd5a93\",\n            \"title\": \"Civilization\"\n        },\n        {\n            \"cast\": [\n                \"Tyrone Power Sr.\",\n                \"Helen Riaume\",\n                \"Marie Walcamp\",\n                \"Cora Drew\"\n            ],\n            \"fullplot\": \"While prosecuting a physician for the death of a client after an abortion, the district attorney discovers that his wife helped her society friends and the daughter of her maid obtain and pay for abortions from the physician (and was perhaps herself also a client.)\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"A District Attorney's outspoken stand on abortion gets him in trouble with the local community.\",\n            \"directors\": [\n                \"Phillips Smalley\",\n                \"Lois Weber\"\n            ],\n            \"_id\": \"573a1390f29313caabcd5ea4\",\n            \"title\": \"Where Are My Children?\"\n        },\n        {\n            \"cast\": [\n                \"Mary Pickford\",\n                \"Madlaine Traverse\",\n                \"Charles Wellesley\",\n                \"Gladys Fairbanks\"\n            ],\n            \"fullplot\": \"Gwen's family is rich, but her parents ignore her and most of the servants push her around, so she is lonely and unhappy. Her father is concerned only with making money, and her mother cares only about her social position. But one day a servant's irresponsibility creates a crisis that causes everyone to rethink what is important to them.\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"Gwen's family is rich, but her parents ignore her and most of the servants push her around, so she is lonely and unhappy. Her father is concerned only with making money, and her mother ...\",\n            \"directors\": [\n                \"Maurice Tourneur\"\n            ],\n            \"_id\": \"573a1390f29313caabcd6223\",\n            \"title\": \"The Poor Little Rich Girl\"\n        },\n        {\n            \"cast\": [\n                \"Douglas Fairbanks\",\n                \"Eileen Percy\",\n                \"Calvert Carter\",\n                \"Charles Stevens\"\n            ],\n            \"fullplot\": \"A rich young Easterner who has always wanted to live in \\\"the Wild West\\\" plans to move to a Western town. Unknown to him, the town's \\\"wild\\\" days are long gone, and it is an orderly, civilized place now. The townsmen, not wanting to lose a rich potential resident, contrive to make over the town to suit the young man's fantasy.\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"A rich young Easterner who has always wanted to live in \\\"the Wild West\\\" plans to move to a Western town. Unknown to him, the town's \\\"wild\\\" days are long gone, and it is an orderly, ...\",\n            \"directors\": [\n                \"John Emerson\"\n            ],\n            \"_id\": \"573a1390f29313caabcd6377\",\n            \"title\": \"Wild and Woolly\"\n        },\n        {\n            \"cast\": [\n                \"Tula Belle\",\n                \"Robin Macdougall\",\n                \"Edwin E. Reed\",\n                \"Emma Lowry\"\n            ],\n            \"fullplot\": \"Two peasant children, Mytyl and Tyltyl, are led by Berylune, a fairy, to search for the Blue Bird of Happiness. Berylune gives Tyltyl a cap with a diamond setting, and when Tyltyl turns the diamond, the children become aware of and conversant with the souls of a Dog and Cat, as well as of Fire, Water, Bread, Light, and other presumably inanimate things. The troupe thus sets off to find the elusive Blue Bird of Happiness.\",\n            \"languages\": [\n                \"English\"\n            ],\n            \"plot\": \"Two peasant children, Mytyl and Tyltyl, are led by Berylune, a fairy, to search for the Blue Bird of Happiness. Berylune gives Tyltyl a cap with a diamond setting, and when Tyltyl turns the...\",\n            \"directors\": [\n                \"Maurice Tourneur\"\n            ],\n            \"_id\": \"573a1390f29313caabcd63d6\",\n            \"title\": \"The Blue Bird\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "For $group, $sort",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dataSource\": \"mongodb-atlas\",\n    \"database\": \"sample_mflix\",\n    \"collection\": \"movies\",\n    \"pipeline\": [\n        {\n            \"$match\": {\n                \"runtime\": {\n                    \"$gte\": 50\n                },\n                \"year\": {\n                    \"$lte\": 2000\n                }\n            }\n        },\n        {\n            \"$project\": {\n                \"title\": 1,\n                \"plot\": 1,\n                \"fullplot\": 1,\n                \"languages\": 1,\n                \"cast\": 1,\n                \"directors\": 1,\n                \"year\": 1\n            }\n        },\n        {\n            \"$group\": {\n                \"_id\": \"$year\",\n                \"no_of_movies\": {\n                    \"$sum\": 1\n                }\n            }\n        },\n        {\n            \"$sort\": {\n                \"no_of_movies\": -1\n            }\n        },\n        {\n            \"$limit\": 10\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/aggregate",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"aggregate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 30 Sep 2024 05:18:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "c1a6b6e6-b94c-4f55-944e-5c812cbacddb"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66fa34b6-15618f1b08e5d19e629429c6;Parent=73ad2e2819ff4227;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"documents\": [\n        {\n            \"no_of_movies\": 565,\n            \"_id\": 2000\n        },\n        {\n            \"no_of_movies\": 503,\n            \"_id\": 1998\n        },\n        {\n            \"no_of_movies\": 501,\n            \"_id\": 1999\n        },\n        {\n            \"no_of_movies\": 426,\n            \"_id\": 1997\n        },\n        {\n            \"no_of_movies\": 396,\n            \"_id\": 1996\n        },\n        {\n            \"no_of_movies\": 363,\n            \"_id\": 1995\n        },\n        {\n            \"no_of_movies\": 293,\n            \"_id\": 1994\n        },\n        {\n            \"no_of_movies\": 269,\n            \"_id\": 1993\n        },\n        {\n            \"no_of_movies\": 263,\n            \"_id\": 1992\n        },\n        {\n            \"no_of_movies\": 247,\n            \"_id\": 1988\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "updateOne",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"_id\": \"6716182f461f0976b8fb3a33\"\n  },\n  \"update\": {\n    \"$set\": {\n      \"name\": \"Fernandes Jr.\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/updateOne",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"updateOne"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"_id\": \"66f52ee7db7b3cc877b0d358\"\n  },\n  \"update\": {\n    \"$set\": {\n      \"name\": \"Luke Shaw Jr.\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/updateOne",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"updateOne"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 10:11:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "69557d04-ec95-4f58-a599-88300e197e3e"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f684dc-4267e6b725f8df36723df3f5;Parent=16d20788c3960723;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"modifiedCount\": 1,\n    \"matchedCount\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "updateMany",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "sessionToken",
+							"value": "{{SESSION_TOKEN}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{REGION}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{SECRET_ACCESS_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "{{ACCESS_KEY_ID}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"likes\": \"attack\"\n  },\n  \"update\": {\n    \"$push\": {\n      \"likes\": \"Lethal Goals\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{function_url}}/updateMany",
+					"host": [
+						"{{function_url}}"
+					],
+					"path": [
+						"updateMany"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dataSource\": \"mongodb-atlas\",\n  \"database\": \"appsyncdb\",\n  \"collection\": \"users\",\n  \"filter\": {\n    \"likes\": \"ST\"\n  },\n  \"update\": {\n    \"$push\": {\n      \"likes\": \"Goals\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{function_url}}/updateMany",
+							"host": [
+								"{{function_url}}"
+							],
+							"path": [
+								"updateMany"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 27 Sep 2024 10:14:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "fbf00539-a8f8-4c10-878a-c1c95db9d363"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-66f68599-7d7c0faf31e2bc3f7a1cd947;Parent=4a14287c21a3e5db;Sampled=0;Lineage=1:69cf7e70:0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"modifiedCount\": 2,\n    \"matchedCount\": 2\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ACCESS_KEY_ID",
+			"value": "ASIA6IESFAOZTLAGJUV5",
+			"type": "string"
+		},
+		{
+			"key": "SECRET_ACCESS_KEY",
+			"value": "XgU8f71AP0k+hFj2HGimMt/woxJxPFk+v6fF+dEN",
+			"type": "string"
+		},
+		{
+			"key": "REGION",
+			"value": "us-east-1",
+			"type": "string"
+		},
+		{
+			"key": "SESSION_TOKEN",
+			"value": "IQoJb3JpZ2luX2VjENz//////////wEaCXVzLWVhc3QtMSJHMEUCIDFSJu4XwVWZM9Z2F/tus0b6dEaST1OcLQoR+S+X3qawAiEA8HIaIENmu5lrYRq5LliEB/SpBo0wLMhBbk/uWHG4/TkqtwMIJRAEGgw5Nzk1NTkwNTYzMDciDKEJmZZJmy67wYd2YCqUA3XJAYwnjLGs2YD9OoPLX9sjjSYe21hGCJVpefIF6khKUdB3Y1VDWKSRs3Tkvja0LEhvX+A41uJHBPDbrd/GCY8NvvDpr0zDDc5YMKlEOenjBdhcYZyVlEZERsib4EQnq5HAOnWA0ix7ER26u7R67RRLfpqhm7D6JWb5PGhm2r1hPUPQlyhuu8WHnAT0b6KVOxU6zq62TOlVyuLPX7sHswIf39Orb52o+IfSVmvua4/9vuT9F9fnWlCGwU1NeNXiEVwoSMeKUvfx7Mmt4uYBu/pmF6tDreF8zncCA2+VILeM2OPaERsf3sdAAUg3/fsQQlN89JJmUPKZi2dCg8XbRaVuE4fTTtIkZdYFPJw63kgUy/R5yyDMuqlfotogMuYGDH1ZuE4b2JWfs+sTJommvMpC6tLo6r7kfi7L8LJPh5jhpP8xUb+eq43pYI3++6TWwWylR98X2w/EvyYG5bda8GefMXTFxDZTquccaQt/nC8Y6XnU8pPqnHvS5etcdzfrghai4wTP3opBh3ZopQmLtuT9wHLnMPfZ2LcGOqYBgMaEiTRJY9P0FVI7NejqjbXP3vunbrJlYYST0MFkTS5UwrNjdVBkJ/1pgV7wUorvj+Yky0GUCralREEvMdt4ns4C0rYxs27aJMAPv5nZ18Gawu1SV9+9xDr3rBXtOOZGeCE098VJwFjHP8rPNc//TBo0y+ICanGsZsKkPwwQ6T5ef4F4d5QImzf34k8VOSLq6SHG5XnIhRJMNXL7IDaedKxLoo0sLA==",
+			"type": "string"
+		},
+		{
+			"key": "function_url",
+			"value": "https://2uolg56ra472f572a2azxxfo640umiqv.lambda-url.us-east-1.on.aws",
+			"type": "string"
+		}
+	]
+}

@@ -19,4 +19,31 @@ The primary functionalities of this project include all the operations that you 
 
 ### AWS
 
-In AWS, we have published a serverless application that will help you deploy a stack required to replicate Data API services in your environments. You can find the detailed steps for deployment [here](/AWS/README.md).
+In AWS, we have published a serverless application that will help you deploy a stack required to replicate Data API services in your environments.
+
+#### Steps for deployment 
+
+1) In your AWS account, go the [Lambda](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) console. Click on the **Applications** section present on the right
+
+![alt text](<images/Lambda_Applications.png>)
+
+2) Click on **Create Application** present on the top right.
+
+![alt text](<images/Create_Application.png>)
+
+3) Select **Serverless application**
+
+![alt text](<images/Serverless_Applications.png>)
+
+4) Search for **MongoDB-DataAPI** in the search bar and check the box that says *Show apps that create custom IAM roles or resource policies*. Select the application highlighted.
+
+![alt text](<images/DataAPI_App.png>)
+
+5) Enter the name of the application, your MongoDB Atlas Cluster Connection Endpoint, check the acknowledgement box and click on **Deploy**.
+
+![alt text](<images/App_Deployment.png>)
+
+After you click on **Deploy**, AWS will initiate a cloudformation stack which will deploy the following resources for you: 
+1. An HTTP API Gateway with IAM auth enabled
+2. Custom IAM role that will provide API gateway the required access to invoke the Lambda function
+3. A Lambda function that will act as a data resolver for your MongoDB Atlas Cluster

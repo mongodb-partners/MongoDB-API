@@ -3,3 +3,5 @@ venv/
 .vs_code/
 .aws_sam/
 packaged.yaml
+LICENSES-ALL.txt
+licenses.json

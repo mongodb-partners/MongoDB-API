@@ -21,6 +21,10 @@ The primary functionalities of this project include all the operations that you 
 
 In AWS, we have published a serverless application that will help you deploy a stack required to replicate Data API services in your environments.
 
+### Architecture
+
+![architecture](/images/DataAPI-Replacement.png)
+
 #### Steps for deployment 
 
 1) In your AWS account, go the [Lambda](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) console. Click on the **Applications** section present on the right
